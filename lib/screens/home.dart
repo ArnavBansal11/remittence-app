@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:swadesh_interview/components/button.dart';
+import 'package:swadesh_interview/screens/upload_documents.dart';
 import 'package:swadesh_interview/state/beneficiary_provider.dart';
 
-import 'components/text_field.dart';
+import '../components/text_field.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -207,6 +208,11 @@ class _HomeState extends State<Home> {
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
                             _formKey.currentState!.save();
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const UploadDocumentsScreen()));
                           }
                         },
                       )

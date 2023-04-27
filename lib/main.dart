@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:swadesh_interview/home.dart';
+import 'package:swadesh_interview/screens/home.dart';
 import 'package:swadesh_interview/state/beneficiary_provider.dart';
 
 void main() {

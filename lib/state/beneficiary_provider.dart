@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 enum BeneficiaryType { business, family, university }
@@ -12,6 +14,9 @@ class BeneficiaryState extends ChangeNotifier {
   BeneficiaryType _beneficiaryType = BeneficiaryType.business;
   BeneficiaryNationality _beneficiaryNationality =
       BeneficiaryNationality.american;
+  File? _aadhar;
+  File? _passport;
+  File? _admissionLetter;
 
   get name => _name;
   get bankName => _bankName;
@@ -19,6 +24,9 @@ class BeneficiaryState extends ChangeNotifier {
   get bankAddress => _bankAddress;
   get beneficiaryType => _beneficiaryType;
   get beneficiaryNationality => _beneficiaryNationality;
+  get aadhar => _aadhar;
+  get passport => _passport;
+  get admissionLetter => _admissionLetter;
 
   set name(v) {
     _name = v;
@@ -47,6 +55,21 @@ class BeneficiaryState extends ChangeNotifier {
 
   set beneficiaryNationality(v) {
     _beneficiaryNationality = v;
+    notifyListeners();
+  }
+
+  set aadhar(v) {
+    _aadhar = v;
+    notifyListeners();
+  }
+
+  set passport(v) {
+    _passport = v;
+    notifyListeners();
+  }
+
+  set admissionLetter(v) {
+    _admissionLetter = v;
     notifyListeners();
   }
 }
