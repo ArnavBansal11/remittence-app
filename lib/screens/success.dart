@@ -22,25 +22,32 @@ class _SuccessPageState extends State<SuccessPage> {
         title: const Text("Success"),
         backgroundColor: const Color(0xff0A6CFF),
       ),
-      body: Column(children: [
-        const Text("Success"),
-        LongButton(
-            onPressed: () {
-              beneficiaryState.name = "";
-              beneficiaryState.bankAddress = "";
-              beneficiaryState.routingNum = "";
-              beneficiaryState.bankName = "";
-              beneficiaryState.beneficiaryNationality =
-                  BeneficiaryNationality.american;
-              beneficiaryState.beneficiaryType = BeneficiaryType.business;
-              beneficiaryState.aadhar = null;
-              beneficiaryState.admissionLetter = null;
-              beneficiaryState.passport = null;
-              Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => const Home()));
-            },
-            text: "Done")
-      ]),
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        padding: const EdgeInsets.all(12),
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text("Success"),
+              // Container(height: double.infinity),
+              LongButton(
+                  onPressed: () {
+                    beneficiaryState.name = "";
+                    beneficiaryState.bankAddress = "";
+                    beneficiaryState.routingNum = "";
+                    beneficiaryState.bankName = "";
+                    beneficiaryState.beneficiaryNationality =
+                        BeneficiaryNationality.american;
+                    beneficiaryState.beneficiaryType = BeneficiaryType.business;
+                    beneficiaryState.aadhar = null;
+                    beneficiaryState.admissionLetter = null;
+                    beneficiaryState.passport = null;
+                    Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context) => const Home()));
+                  },
+                  text: "Done")
+            ]),
+      ),
     );
   }
 }
